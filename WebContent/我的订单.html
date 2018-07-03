@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/我的订单.css">
+	<script language="javascript" src="js/我的订单.js"></script>
+</head>
+<title>注册</title>
+<body>
+	<div class="top-nav">
+	    <div class="container">
+	        <div class="fl">
+	            <a href="index.html" class="item">首页</a>
+	        </div>
+	        <div class="fr">
+	            <a href="我的订单.html" class="item">我的订单</a>
+	            <a href="收藏夹.html" class="item">收藏夹</a>
+				<a href="登录.html" class="item">登录</a>
+	            <a href="注册.html" class="item">注册</a>
+	            <a href="客户服务.html" class="item">客户服务</a>
+	        </div>
+	    </div>
+	</div>
+	<div class="header clearf">
+	    <div class="container">
+	        <div class="logo col-2">
+	           <img src="img/购物车.jpg" height="50" width="50">
+	        </div>
+	        <div class="search-bar col-5">
+				
+	            <input type="text" class="col-8">
+	            <button class="col-2">搜索</button>
+	        </div>
+	        <div class="cart col-3">
+	            <div class="trigger">
+								<a href="我的订单.html">
+	                我的购物车</a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	<div class="order">
+		<div class="info">
+			<button onclick="checkboxed('checkbox')">全选</button>
+			<button onclick="uncheckboxed('checkbox')">取消全选</button>
+			<div class="goods">商品</div>
+			<div class="price">单价</div>
+			<div class="amount">数量</div>
+			<div class="total">金额</div>
+			<div class="mng">操作</div>
+		</div>
+		<div class="orderList">
+			<div class="store">
+				<div class="orderItem1">
+				<li class="goods"><input type="checkbox" name="checkbox" value=1>纪念明信片</li>
+				<li class="pic"><img src="img/购物车.jpg" height="50" width="50">postcard</li>
+				<li class="price">500</li>
+				<li class="amount">3</li>
+				<li class="total">1500</li>
+				<li class="mng"><input type="checkbox" name="" value=1>移出购物车</li>
+				</div>
+			</div>
+			<div class="store">
+				<div class="orderItem">
+				<li class="goods"><input type="checkbox" name="checkbox"value=2>环珞珈山游</li>
+				<li class="pic"><img src="img/购物车.jpg" height="50" width="50">报名费</li>
+				<li class="price">500</li>
+				<li class="amount">3</li>
+				<li class="total">1500</li>
+				<li class="mng"><input type="checkbox" name="" value=1>移出购物车</li>
+				</div>
+			</div>
+			<div class="store">
+				<div class="orderItem1">
+				<li class="goods"><input type="checkbox" name="checkbox"value=4>定制纪念服</li>
+				<li class="pic"><img src="img/购物车.jpg" height="50" width="50">定金</li>
+				<li class="price">500</li>
+				<li class="amount">3</li>
+				<li class="total">1500</li>
+				<li class="mng"><input type="checkbox" name="" value=1>移出购物车</li>
+				</div>
+			</div>
+		</div>
+		<div class="calculate">
+			<div class="button" a href="#">确认</a></div>
+		</div>
+	</div>
+	<div class="footer">
+	    <div class="container">
+	        <a href="#">联系我们</a>
+	    </div>
+	</div>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/slick-carousel/slick/slick.min.js"></script>
+	<script>
+	  $('.slider').slick({
+	    autoplay: true,
+	    autoplaySpeed: 3000,
+	    arrows: false
+	  });
+	</script>
+</body>
+</html>
