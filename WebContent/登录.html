@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="css/登录.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <title>登录</title>
 <body>
@@ -43,9 +43,11 @@
 	<div class="login">
 		<form action="doLogin" method="get">
 			</br></br>
-		用户名<input id="username"></br></br>
-		密码&nbsp;<input type="password" id="password"></br></br>
-		<div class="button" a href="#">登录</a></div>
+		用户名<input type="text" name="username"></br></br>
+		密码&nbsp;<input type="password" name="password"></br></br>
+		<div a href="#">
+		<input type="submit" value="登录">
+		</a></div>
 		</form>
 	</div>
 	<div class="footer">

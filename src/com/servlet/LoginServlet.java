@@ -17,17 +17,14 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.dao.DataOperate;
 import com.models.Student;
+import com.sqlConnection.DBConnection;
 
 /**
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-	static SqlSession session;
 	
-	public static void  setSession(SqlSession session1) {
-		session=session1;
-	}
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -43,22 +40,25 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		SqlSession session=DBConnection.OpenSession();
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String studentID=request.getParameter("username");
 		String password=request.getParameter("password");
 		List<Student>students;
-		students=session.selectList("com.dao.DataOperate", studentID);
-		if (students.size()==0) { }
+		students=session.selectList("com.dao.DataOperate.getStudentByID", studentID);
+		if (students.size()==0) {
+			
+		}
 		else if (students.get(0).getPassword().equals(password)) {
-				
+			response.sendRedirect("index.html");
 			}
 		else {
-				
+			
 			}
 		
-		
 	}
+		
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -66,6 +66,6 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
 	}
-
 }

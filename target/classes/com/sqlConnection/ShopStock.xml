@@ -2,10 +2,3 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--// 在这里实现shopstock数据的操作的SQL语句，并且映射到相应的dataoperate中的接口 -->
-<configuration>
-    
-    
-    
-    
-    
-    </configuration>

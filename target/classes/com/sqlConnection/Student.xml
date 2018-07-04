@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!--// 在这里实现student数据的操作的SQL语句，并且映射到相应的dataoperate中的接口 -->
-<configuration>
-    
-    
-    
-    
-    
-    </configuration>
+<mapper namespace="com.dao.DataOperate">
+    <!--  <resultMap type="Student" id="resultStudent">
+        <result  property="studentID" column="studentID" /> 
+        <result  property="studentName" column="studentName" /> 
+        <result  property="password" column="password" /> 
+        <result  property="address" column="address" /> 
+        <result  property="phone" column="phone" /> 
+    </resultMap>-->
+    <select id="getStudentByID" parameterType="java.lang.String" resultType="com.models.Student">
+        select * from student where studentID = #{studentID}
+    </select>
+    <insert id="insertStudent" parameterType="Student">
+        insert into student (studentID,studentName,phone,address,password)
+        values (#{studentID},#{studentName},#{phone},#{address},#{password})
+    </insert>
+    <update id="updateStudent" parameterType="Student">
+        update student set 
+        studentName=#{studentName},
+        phone=#{phone},
+        address=#{address},
+        password=#{password}
+    </update>
+
+</mapper>

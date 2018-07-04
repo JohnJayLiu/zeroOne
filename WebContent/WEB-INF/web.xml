@@ -4,7 +4,11 @@
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.servlet.LoginServlet</servlet-class>
   </servlet>
-  <display-name>DBhomework8</display-name>
+  <servlet-mapping>
+      <servlet-name>LoginServlet</servlet-name>
+      <url-pattern>/doLogin</url-pattern>
+  </servlet-mapping>
+  <display-name>zeroOne</display-name>
   <welcome-file-list>
     <welcome-file>登录.html</welcome-file>
   </welcome-file-list>

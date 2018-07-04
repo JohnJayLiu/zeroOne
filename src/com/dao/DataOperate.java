@@ -1,9 +1,9 @@
 package com.dao;
 
 import com.models.*;
-//ÔÚÕâÀï¶¨ÒåÊı¾İ¿â²Ù×÷µÄ½Ó¿Ú
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¶¨ï¿½ï¿½ï¿½ï¿½ï¿½İ¿ï¿½ï¿½ï¿½ï¿½ï¿½Ä½Ó¿ï¿½
 public interface DataOperate {
-	public Student getStudentByID(String StudentID);
+	public Student getStudentByID(String studentID);
 	public void insertStudent(Student student);
 	public void updateStudent(Student student);
 }
