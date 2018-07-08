@@ -50,7 +50,7 @@ public class RegisterServlet extends HttpServlet {
 					}
 				else {
 					session.insert(statement,stu);
-					session.commit();	
+					session.commit();
 					response.sendRedirect("登录.html");
 					}
 				}

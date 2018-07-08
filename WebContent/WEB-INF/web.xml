@@ -16,6 +16,14 @@
     <servlet-name>GoodsServlet</servlet-name>
     <url-pattern>/goodsPage</url-pattern>
   </servlet-mapping>
+  <servlet>
+      <servlet-name>deleteGoodsServlet</servlet-name>
+      <servlet-class>com.servlet.DeleteGoodsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>deleteGoodsServlet</servlet-name>
+      <url-pattern>/deleteGoods</url-pattern>
+  </servlet-mapping>
   <display-name>zeroOne</display-name>
   <welcome-file-list>
     <welcome-file>注册.html</welcome-file>

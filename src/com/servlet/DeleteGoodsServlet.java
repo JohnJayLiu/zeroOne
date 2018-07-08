@@ -7,17 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+
 /**
- * Servlet implementation class AddProductionServlet
+ * Servlet implementation class DeleteGoodsServlet
  */
-@WebServlet("/addProduction")
-public class AddProductionServlet extends HttpServlet {
+
+public class DeleteGoodsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddProductionServlet() {
+    public DeleteGoodsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,11 +37,13 @@ public class AddProductionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String goodsID= request.getReader().readLine();
+		////根据获取到的ID删除
+		System.out.println(goodsID);
+		
+		
+		
 		doGet(request, response);
-		String []goodsList=request.getParameterValues("chooseGoods");
-		for (String goods:goodsList) {
-			//从数据库删除相应的产品
-		}
 	}
 
 }

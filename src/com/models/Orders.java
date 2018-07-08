@@ -2,8 +2,7 @@ package com.models;
 
 import java.util.LinkedList;
 import java.util.List;
-
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+import java.util.UUID;
 
 public class Orders {
 	private List<Store>store;
@@ -69,11 +68,13 @@ final class Item {
 	private String  price;
 	private String amount;
 	private String total;
+	private String goodsID;
 	public Item () {
 		goods="goods";
 		price="5";
 		amount="4";
 		total=""+Integer.valueOf(price).intValue()*Integer.valueOf(amount).intValue();
+		goodsID = UUID.randomUUID().toString().replaceAll("-", "");
 	}
 	public String getGoods() {
 		return goods;
@@ -98,5 +99,11 @@ final class Item {
 	}
 	public void setTotal(String total) {
 		this.total = total;
+	}
+	public String getGoodsID() {
+		return goodsID;
+	}
+	public void setGoodsID(String goodsID) {
+		this.goodsID = goodsID;
 	}
 }

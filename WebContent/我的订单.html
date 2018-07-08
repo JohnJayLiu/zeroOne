@@ -12,7 +12,6 @@
 
 		<!--ajax提交表单需要引入jquery.form.js-->
 		<script type="text/javascript" src="http://malsup.github.io/jquery.form.js"></script>
-		
 </head>
 <title>我的订单</title>
 <body>
@@ -59,7 +58,6 @@
 			<div class="total">金额</div>
 			<div class="mng">操作</div>
 		</div>
-		<div class="test" id="test"></div>
 		<div class="orderList" id="orderList">
 			<!--<div class="store">
 				<div class="orderItem1">
@@ -94,11 +92,31 @@
 			</div>-->
 		</div>
 		<div class="calculate">
-			<div class="button" a href="#" >确认</a></div>
+			<div class="button" onclick="confirm()"><a target="_blank" href="#" style="color:white">确认</a></div>
+			<!--<script>
+				var data = $("#check").serializeObject();
+				$("#test").html(JSON.stringify(data));
+				
+				$.ajax({  
+												url : a.action,  
+												type : "POST",  
+												datatype:"json",  
+												contentType: "application/json; charset=utf-8",  
+												data: data, 
+												success : function(data, stats) {  
+														if (stats == "success") {  
+															//   window.location.href="/yc"  
+														}  
+												},  
+												error : function(data) {  
+														alert("请求失败");  
+												}  
+										});  
+			</script>-->
 		</div>
 	</div>
 	<div class="footer">
-	    <div class="container">
+	    <div class="container" id="test">
 	        <a href="#">联系我们</a>
 	    </div>
 	</div>
