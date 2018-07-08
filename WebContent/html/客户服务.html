@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -5,7 +6,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" href="../css/客户服务.css">
+	<script language="javascript" src="../js/客户服务.js"></script>
 </head>
 <title>登录</title>
 <body>
@@ -41,28 +43,28 @@
 	    </div>
 	</div>
 	<div class="login">
-		<form action="GoodsPageServlet" method="get">
-			</br></br>
-		用户名<input type="text" name="username"></br></br>
-		密码&nbsp;<input type="password" name="password"></br></br>
-		<div a href="#">
-		<input type="submit" value="登录">
-		</a></div>
-		</form>
+		<div id = "tab">
+		        <ul>
+		        <li class="off">客服</li>
+		        <li class="on">投诉</li>
+		        <li class="off">帮助</li>
+		        </ul>
+		    <div id="firstPage" class="hide">
+		            <a href = "#">客服</a><br/>
+		    </div>
+		    <div id="secondPage" class="show">
+		            <a href = "#">投诉</a><br/>
+		    </div>
+		    <div id="thirdPage" class = "hide">
+		            <a href = "#">找不到产品？</a><br/>
+								<a href = "#">忘记密码？</a><br/>
+		    </div>
+		</div>
 	</div>
 	<div class="footer">
 	    <div class="container">
 	        <a href="#">联系我们</a>
 	    </div>
 	</div>
-	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="node_modules/slick-carousel/slick/slick.min.js"></script>
-	<script>
-	  $('.slider').slick({
-	    autoplay: true,
-	    autoplaySpeed: 3000,
-	    arrows: false
-	  });
-	</script>
 </body>
 </html>

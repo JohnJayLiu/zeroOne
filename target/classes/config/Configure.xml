@@ -4,6 +4,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="Student" type="com.models.Student" />
+		<typeAlias alias="ShopStock" type="com.models.ShopStock" />
 	</typeAliases>
 	<environments default="development">
 	    <environment id="development">
@@ -20,5 +21,6 @@
 	<mappers>
 	   
 	     <mapper resource="com/sqlConnection/Student.xml" />
+	      <mapper resource="com/sqlConnection/ShopStock.xml" />
 	</mappers>
 </configuration>

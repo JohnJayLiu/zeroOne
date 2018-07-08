@@ -8,7 +8,13 @@ public class Student {
 	private String password;
 	private String address;
 	private String phone;
-	
+	private String email;
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email=email;
+	}
 	public void setStudentName(String studentName){
 		this.studentName=studentName;
 	}

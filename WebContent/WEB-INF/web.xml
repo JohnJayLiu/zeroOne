@@ -5,11 +5,31 @@
     <servlet-class>com.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-      <servlet-name>LoginServlet</servlet-name>
-      <url-pattern>/doLogin</url-pattern>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/doLogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GoodsServlet</servlet-name>
+    <servlet-class>com.servlet.GoodsPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoodsServlet</servlet-name>
+    <url-pattern>/goodsPage</url-pattern>
   </servlet-mapping>
   <display-name>zeroOne</display-name>
   <welcome-file-list>
-    <welcome-file>登录.html</welcome-file>
+    <welcome-file>注册.html</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>testServlet</servlet-name>
+    <servlet-class>com.servlet.TestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/doRegister</url-pattern>
+  </servlet-mapping>
 </web-app>

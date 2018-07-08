@@ -166,6 +166,11 @@ img {
 	background: #f5f5f5;
 }
 
+.storeIns{
+	text-align:left;
+	background-color:#ddd;
+}
+
 .goods,
 .price,
 .amount,
@@ -174,6 +179,8 @@ img {
 .pic{
 	display:inline-block;
 	width:150px;
+	vertical-align:middle;
+	
 }
 
 .calculate{
@@ -195,6 +202,7 @@ img {
     text-shadow: 0 1px 1px black;
     color:white;
     font-weight: bold;
+	
 }
 .button:active{
     box-shadow: .05em .1em .2em rgba(0,0,0,.6) inset;

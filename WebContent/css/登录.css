@@ -149,20 +149,13 @@ img {
     color: #fff;
 }
 
-.reg{
+.login{
 	width:600px;
-	
+	height:300px;
 	background-color:#eee;
 	border:2px solid #dd182b;
 	margin:auto;
-	text-align:center;
-}
-
-.reg_inner{
-	width:400px;
-	//height:300px;
-	margin:auto;
-	text-align: left;
+	text-align: center;
 }
 
 .button{

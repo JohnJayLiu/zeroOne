@@ -2,3 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--// 在这里实现shopstock数据的操作的SQL语句，并且映射到相应的dataoperate中的接口 -->
+<mapper namespace="com.dao.DataOperate">
+    <select id="getShopStock" parameterType="java.lang.String" resultType="ShopStock">
+        select * from shopStock where shopID=#{shopID}
+    </select>
+    <!-- <insert id="insertShopStock" parameterType="ShopStock" keyProperty="shopID">
+    insert into ShopStock(goodsID,goodsName,price,goodsCount,goodsDescription)
+    values {#{goodsID},#{goodsName},#{price},#{goodsCount},#{goodsDescription}} where shopID=#{shopID}
+    </insert>
+    <update id="updateShopStock" parameterType="ShopStock">
+        update ShopStock set goodsID=#{goodsID},goodsName=#{goodsName},price=#{price},
+        goodsCount=#{goodsCount},goodsDescription=#{goodsDescription}
+        where shopID=#{shopID}
+    </update>
+    <delete id="deleteShopStock" parameterType="ShopStock">
+        delete from ShopStock WHERE shopID=#{shopID}
+    </delete> -->
+</mapper>

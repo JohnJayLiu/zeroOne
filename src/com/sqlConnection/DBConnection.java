@@ -27,3 +27,4 @@ public class DBConnection {
     		return sqlSessionFactory.openSession();
     	}
 }
+

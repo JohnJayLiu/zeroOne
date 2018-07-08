@@ -5,10 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="css/我的订单.css">
-	<script language="javascript" src="js/我的订单.js"></script>
+		
+		
+		<!--jquery需要引入的文件-->
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+
+		<!--ajax提交表单需要引入jquery.form.js-->
+		<script type="text/javascript" src="http://malsup.github.io/jquery.form.js"></script>
+		
 </head>
-<title>注册</title>
+<title>我的订单</title>
 <body>
 	<div class="top-nav">
 	    <div class="container">
@@ -27,7 +33,7 @@
 	<div class="header clearf">
 	    <div class="container">
 	        <div class="logo col-2">
-	           <img src="img/购物车.jpg" height="50" width="50">
+	           <img src="../img/购物车.jpg" height="50" width="50">
 	        </div>
 	        <div class="search-bar col-5">
 				
@@ -53,12 +59,14 @@
 			<div class="total">金额</div>
 			<div class="mng">操作</div>
 		</div>
-		<div class="orderList">
-			<div class="store">
+		<div class="test" id="test"></div>
+		<div class="orderList" id="orderList">
+			<!--<div class="store">
 				<div class="orderItem1">
 				<li class="goods"><input type="checkbox" name="checkbox" value=1>纪念明信片</li>
-				<li class="pic"><img src="img/购物车.jpg" height="50" width="50">postcard</li>
-				<li class="price">500</li>
+				<li class="pic"><img src="../img/购物车.jpg" height="50" width="50">postcard</li>
+				<li class="price" id="content">
+				500</li>
 				<li class="amount">3</li>
 				<li class="total">1500</li>
 				<li class="mng"><input type="checkbox" name="" value=1>移出购物车</li>
@@ -67,7 +75,7 @@
 			<div class="store">
 				<div class="orderItem">
 				<li class="goods"><input type="checkbox" name="checkbox"value=2>环珞珈山游</li>
-				<li class="pic"><img src="img/购物车.jpg" height="50" width="50">报名费</li>
+				<li class="pic"><img src="../img/购物车.jpg" height="50" width="50">报名费</li>
 				<li class="price">500</li>
 				<li class="amount">3</li>
 				<li class="total">1500</li>
@@ -77,16 +85,16 @@
 			<div class="store">
 				<div class="orderItem1">
 				<li class="goods"><input type="checkbox" name="checkbox"value=4>定制纪念服</li>
-				<li class="pic"><img src="img/购物车.jpg" height="50" width="50">定金</li>
+				<li class="pic"><img src="../img/购物车.jpg" height="50" width="50">定金</li>
 				<li class="price">500</li>
 				<li class="amount">3</li>
 				<li class="total">1500</li>
 				<li class="mng"><input type="checkbox" name="" value=1>移出购物车</li>
 				</div>
-			</div>
+			</div>-->
 		</div>
 		<div class="calculate">
-			<div class="button" a href="#">确认</a></div>
+			<div class="button" a href="#" >确认</a></div>
 		</div>
 	</div>
 	<div class="footer">
@@ -94,14 +102,8 @@
 	        <a href="#">联系我们</a>
 	    </div>
 	</div>
-	<script src="node_modules/jquery/dist/jquery.js"></script>
-	<script src="node_modules/slick-carousel/slick/slick.min.js"></script>
-	<script>
-	  $('.slider').slick({
-	    autoplay: true,
-	    autoplaySpeed: 3000,
-	    arrows: false
-	  });
-	</script>
+	<script src=""></script>
+	<script language="javascript" src="js/我的订单.js"></script>
+	<link rel="stylesheet" href="css/我的订单.css">
 </body>
 </html>
