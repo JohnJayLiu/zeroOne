@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--这个是联合购物车与网店显示信息，主键是购物车的goodID-->
+<mapper namespace="com.dao.DataOperate">
+    <select id="coonQueryList" parameterType="String" resultMap="connResultMap">
+        select * from ShoppingCar c ,ShopStock s where c.goodsID=s.goodsID and c.goodsID=#{goodsID}
+    </select>
+<resultMap id="connResultMap" type="com.models.ShoppingCar">
+<id column="goodsID" property="goodsID"/>
+    <result property="studentID" column="studentID"/>
+    <result property="count" column="count"/>
+    <association property="ShopStock" javaType="com.models.ShopStock">
+        <id column="s_goodsID" property="goodsID"/>
+        <result property="ShopID" column="s_ShopID"/>
+        <result property="goodsName" column="s_goodsName"/>
+        <result property="price" column="s_price"/>
+        <result property="goodsCount" column="s_goodsCount"/>
+        <result property="Description" column="s_Description"/>
+    </association>
+</resultMap>
+    <select id="coonSS" parameterType="String" resultMap="coonPk">
+        select * from shop p,ShopStock k where p.shopID=k.shopID and k.shopID=#{shopID}
+    </select>
+    <resultMap id="coonPk" type="com.models.ShopStock">
+        <id column="shopID" property="shopID"/>
+        <id property="goodsID" column="goodsID"/>
+        <id property="goodsName" column="goodsName"/>
+        <id column="price" property="price"/>
+        <id property="goodsCount" column="goodsCount"/>
+        <id column="goodsDescription" property="goodsDescription"/>
+        <association property="shop" javaType="com.models.Shop">
+            <id column="shopID" property="shopID"/>
+            <result column="shopName" property="shopName"/>
+        </association>
+    </resultMap>
+</mapper>

@@ -2,3 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--// 在这里实现shop数据的操作的SQL语句，并且映射到相应的dataoperate中的接口 -->
+<mapper namespace="com.dao.DataOperate">
+    <select id="getShopID" parameterType="String" resultType="shop">
+        select * from shop where shopID=#{shopID}
+    </select>
+    <insert id="insertShop" parameterType="shop" keyProperty="shopID">
+        insert into shop (shopID,shopName)values (#{shopID},#{shopName})
+    </insert>
+    <update id="updateShop" parameterType="shop">
+        update shop set shopName=#{shopName}where shopID=#{shopID}
+     </update>
+    <delete id="deleteShop" parameterType="String">
+        delete from shop where shopID=#{shopID}
+    </delete>
+</mapper>

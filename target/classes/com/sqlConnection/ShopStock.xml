@@ -3,10 +3,10 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--// 在这里实现shopstock数据的操作的SQL语句，并且映射到相应的dataoperate中的接口 -->
 <mapper namespace="com.dao.DataOperate">
-    <select id="getShopStock" parameterType="java.lang.String" resultType="ShopStock">
-        select * from shopStock where shopID=#{shopID}
+    <select id="getShopStock" parameterType="String" resultType="ShopStock">
+        select * from ShopStock where shopID=#{shopID}
     </select>
-    <!-- <insert id="insertShopStock" parameterType="ShopStock" keyProperty="shopID">
+    <insert id="insertShopStock" parameterType="ShopStock" keyProperty="shopID">
     insert into ShopStock(goodsID,goodsName,price,goodsCount,goodsDescription)
     values {#{goodsID},#{goodsName},#{price},#{goodsCount},#{goodsDescription}} where shopID=#{shopID}
     </insert>
@@ -15,7 +15,7 @@
         goodsCount=#{goodsCount},goodsDescription=#{goodsDescription}
         where shopID=#{shopID}
     </update>
-    <delete id="deleteShopStock" parameterType="ShopStock">
+    <delete id="deleteShopStock" parameterType="String">
         delete from ShopStock WHERE shopID=#{shopID}
-    </delete> -->
+    </delete>
 </mapper>

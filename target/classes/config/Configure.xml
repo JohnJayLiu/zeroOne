@@ -4,7 +4,10 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="Student" type="com.models.Student" />
-		<typeAlias alias="ShopStock" type="com.models.ShopStock" />
+		<typeAlias  alias="Shop" type="com.models.Shop"/>
+		<typeAlias  alias="ShopStock" type="com.models.ShopStock"/>
+		<typeAlias  alias="ShoppingCar" type="com.models.ShoppingCar"/>
+		<typeAlias type="com.models.ShoppingCar" alias="coonShoppingCar"/>
 	</typeAliases>
 	<environments default="development">
 	    <environment id="development">
@@ -19,8 +22,10 @@
 	</environments>
 
 	<mappers>
-	   
 	     <mapper resource="com/sqlConnection/Student.xml" />
-	      <mapper resource="com/sqlConnection/ShopStock.xml" />
+		<mapper resource="com/sqlConnection/Shop.xml"/>
+		<mapper resource="com/sqlConnection/ShopStock.xml"/>
+        <mapper resource="com/sqlConnection/coonShoppingCar.xml"/>
+		<mapper resource="com/sqlConnection/ShoppingCar.xml"/>
 	</mappers>
 </configuration>
