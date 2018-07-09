@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		
+		
+		<!--jquery需要引入的文件-->
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+
+		<!--ajax提交表单需要引入jquery.form.js-->
+		<script type="text/javascript" src="http://malsup.github.io/jquery.form.js"></script>
+</head>
+<title>我的订单</title>
+<body>
+	<div class="top-nav">
+	    <div class="container">
+	        <div class="fl">
+	            <a href="index.html" class="item">首页</a>
+	        </div>
+	        <div class="fr">
+	            <a href="我的订单.html" class="item">我的订单</a>
+	            <a href="收藏夹.html" class="item">收藏夹</a>
+				<a href="登录.html" class="item">登录</a>
+	            <a href="注册.html" class="item">注册</a>
+	            <a href="客户服务.html" class="item">客户服务</a>
+	        </div>
+	    </div>
+	</div>
+	<div class="header clearf">
+	    <div class="container">
+	        <div class="logo col-2">
+	           <img src="../img/购物车.jpg" height="50" width="50">
+	        </div>
+	        <div class="search-bar col-5">
+				
+	            <input type="text" class="col-8">
+	            <button class="col-2">搜索</button>
+	        </div>
+	        <div class="cart col-3">
+	            <div class="trigger">
+								<a href="我的订单.html">
+	                我的购物车</a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	<div class="order">
+		<div class="info">
+			<button onclick="checkboxed('checkbox')">全选</button>
+			<button onclick="uncheckboxed('checkbox')">取消全选</button>
+			<div class="goods">商品</div>
+			<div class="price">单价</div>
+			<div class="amount">数量</div>
+			<div class="total">金额</div>
+			<div class="mng">操作</div>
+		</div>
+		<div class="orderList" id="orderList">
+			<!--<div class="store">
+				<div class="orderItem1">
+				<li class="goods"><input type="checkbox" name="checkbox" value=1>纪念明信片</li>
+				<li class="pic"><img src="../img/购物车.jpg" height="50" width="50">postcard</li>
+				<li class="price" id="content">
+				500</li>
+				<li class="amount">3</li>
+				<li class="total">1500</li>
+				<li class="mng"><input type="checkbox" name="" value=1>移出购物车</li>
+				</div>
+			</div>
+			<div class="store">
+				<div class="orderItem">
+				<li class="goods"><input type="checkbox" name="checkbox"value=2>环珞珈山游</li>
+				<li class="pic"><img src="../img/购物车.jpg" height="50" width="50">报名费</li>
+				<li class="price">500</li>
+				<li class="amount">3</li>
+				<li class="total">1500</li>
+				<li class="mng"><input type="checkbox" name="" value=1>移出购物车</li>
+				</div>
+			</div>
+			<div class="store">
+				<div class="orderItem1">
+				<li class="goods"><input type="checkbox" name="checkbox"value=4>定制纪念服</li>
+				<li class="pic"><img src="../img/购物车.jpg" height="50" width="50">定金</li>
+				<li class="price">500</li>
+				<li class="amount">3</li>
+				<li class="total">1500</li>
+				<li class="mng"><input type="checkbox" name="" value=1>移出购物车</li>
+				</div>
+			</div>-->
+		</div>
+		<div class="calculate">
+			<div class="button" onclick="confirm()"><a target="_blank" href="#" style="color:white">确认</a></div>
+			<!--<script>
+				var data = $("#check").serializeObject();
+				$("#test").html(JSON.stringify(data));
+				
+				$.ajax({  
+												url : a.action,  
+												type : "POST",  
+												datatype:"json",  
+												contentType: "application/json; charset=utf-8",  
+												data: data, 
+												success : function(data, stats) {  
+														if (stats == "success") {  
+															//   window.location.href="/yc"  
+														}  
+												},  
+												error : function(data) {  
+														alert("请求失败");  
+												}  
+										});  
+			</script>-->
+		</div>
+	</div>
+	<div class="footer">
+	    <div class="container" id="test">
+	        <a href="#">联系我们</a>
+	    </div>
+	</div>
+	<script src=""></script>
+	<script language="javascript" src="../js/我的订单.js"></script>
+	<link rel="stylesheet" href="../css/我的订单.css">
+</body>
+</html>

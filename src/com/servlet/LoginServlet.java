@@ -43,7 +43,6 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		SqlSession session=DBConnection.OpenSession();
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String studentID=request.getParameter("username");
 		String password=request.getParameter("password");
 		List<Student>students;
@@ -56,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		else if (students.get(0).getPassword().equals(password)) {
 			response.sendRedirect("index.html");
-			hSession.setAttribute("student", students.get(0));
+			hSession.setAttribute("studentID", students.get(0).getStudentID());
 			}
 		else {
 			PrintWriter out= response.getWriter();

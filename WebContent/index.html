@@ -1,11 +1,17 @@
 <!doctype html>
 <html>
+	
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
+		<!--jquery需要引入的文件-->
+				<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+		
+				<!--ajax提交表单需要引入jquery.form.js-->
+				<script type="text/javascript" src="http://malsup.github.io/jquery.form.js"></script>
 </head>
 <body>
 <div class="top-nav">
@@ -28,9 +34,54 @@
             <!--<img src="image/logo.png"/>-->
         </div>
         <div class="search-bar col-5">
-            <input type="text" class="col-8">
-            <button class="col-2">搜索</button>
+					<form>
+            <input type="text" class="col-8" name="search">
+            <button class="col-2" id="search">搜索</button>
+					</form>
         </div>
+				<script src="http://asset.jdk5.com/js/lib/jquery.js"></script>
+				<script src="http://asset.jdk5.com/js/lib/json.js"></script>
+				<script>
+					$(function (){
+														$.fn.serializeObject = function(){
+														var o = {};
+														var a = this.serializeArray();
+														$.each(a, function() {
+																if (o[this.name] !== undefined) {
+																		if (!o[this.name].push) {
+																				o[this.name] = [o[this.name]];
+																		}
+																		o[this.name].push(this.value || '');
+																} else {
+																		o[this.name] = this.value || '';
+																}
+														});
+														return o;
+												}
+												
+												$("#search").click(function (){
+													var data = $("form").serializeObject();
+													alert(JSON.stringify(data));
+													$.ajax({  
+																			url : a.action,  
+																			type : "POST",  
+																			datatype:"json",  
+																			contentType: "application/json; charset=utf-8",  
+																			data: data, 
+																			success : function(data, stats) {  
+																					if (stats == "success") {  
+																						//   window.location.href="/yc"  
+																					}  
+																			},  
+																			error : function(data) {  
+																					alert("请求失败");  
+																			}  
+																	});  
+												});
+											
+											});
+									
+					</script>
         <div class="cart col-3">
             <div class="trigger">
                 我的购物车
@@ -41,39 +92,33 @@
 <div class="main-promote clearf">
     <div class="container">
         <div class="col-2 cat">
-            <div class="row">item1 / item1</div>
-            <div class="row">item2 / item2</div>
-            <div class="row">item3 / item3</div>
-            <div class="row">item4 / item4</div>
+            <div class="row"><a href="#products" style="color:white">创意产品</a></div>
+            <div class="row"><a href="#act" style="color:white">活动</a></div>
+            <div class="row"><a href="#club" style="color:white">社团</a></div>
+            <div class="row"><a href="#others" style="color:white">others</a></div>
             <div class="row">item5 / item5</div>
             <div class="row">item6 / item6</div>
             <div class="row">item7 / item7</div>
             <div class="row">item8 / item8</div>
             <div class="row">item9 / item9</div>
-            <div class="row">item10 / item10</div>
-            <div class="row">item10 / item10</div>
         </div>
         <div class="col-6">
-            <div class="slider">
-                <div>
-                    <img src="img/slider_03.png" alt="">
-                </div>
-                <div>
-                    <img src="img/slider_02.png" alt="">
-                </div>
-                <div>
-                    <img src="img/slider_03.png" alt="">
-                </div>
-            </div>
-            <div>
-                <div class="col-5">
-                    <img src="img/001.png" alt="">
-                </div>
-                <div class="col-5">
-                    <img src="img/002.png" alt="">
-                </div>
-            </div>
-        </div>
+					<div id="container">
+							<div id="list" style="left: -600px;">
+							<img src="" alt="1"/>
+							<a href="goods.html?id=1"><img src="../img/slider_03.png" alt="1"></a>
+							<a href="goods.html?id=2"><img src="../img/001.png" alt="1"></a>
+							<a href="goods.html?id=3"><img src="../img/slider_02.png" alt="1"></a>
+							</div>
+							<div id="buttons">
+									<span index="1" class="on"></span>
+									<span index="2"></span>
+									<span index="3"></span>
+							</div>
+							<a href="javascript:;" id="prev" class="arrow">&lt;</a>
+							<a href="javascript:;" id="next" class="arrow">&gt;</a>
+					</div>
+        </div>				
         <div class="col-2 sub-promote">
             <div>
                 <div class="clearf">
@@ -95,7 +140,7 @@
     </div>
 </div>
 <div class="container">
-    <div class="promote-title">创意产品</div>
+    <div class="promote-title"><a name="products" target="_parent" style="color:#555">创意产品</a></div>
     <div class="promote-seg">
         <div class="col-3">
             <div style="background: #d3b3e2;" class="card"></div>
@@ -107,7 +152,7 @@
             <div style="background: #f9e279;" class="card"></div>
         </div>
     </div>
-    <div class="promote-title">活动</div>
+    <div class="promote-title"><a name="act" target="_parent" style="color:#555">活动</a></div>
     <div class="promote-seg">
         <div class="col-2">
             <div style="background: #eca78f;" class="card"></div>
@@ -122,7 +167,7 @@
             <div style="background: #b8a08d;" class="card"></div>
         </div>
     </div>
-    <div class="promote-title">社团</div>
+    <div class="promote-title"><a name="club" target="_parent" style="color:#555">社团</a></div>
     <div class="promote-seg">
         <div class="col-3">
             <div style="background: #d28ede;" class="card"></div>
@@ -134,7 +179,7 @@
             <div style="background: #f3d963;" class="card"></div>
         </div>
     </div>
-    <div class="promote-title">others</div>
+    <div class="promote-title"><a name="others" target="_parent" style="color:#555">others</a></div>
     <div class="promote-seg">
         <div class="col-2">
             <div style="background: #e6deea;" class="card"></div>
@@ -155,14 +200,6 @@
         <a href="#">联系我们</a>
     </div>
 </div>
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="node_modules/slick-carousel/slick/slick.min.js"></script>
-<script>
-  $('.slider').slick({
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false
-  });
-</script>
+<script src="js/index.js"></script>
 </body>
 </html>

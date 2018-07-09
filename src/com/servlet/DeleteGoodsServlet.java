@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.session.SqlSession;
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+
+import com.sqlConnection.DBConnection;
 
 /**
  * Servlet implementation class DeleteGoodsServlet
@@ -29,7 +32,7 @@ public class DeleteGoodsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -38,7 +41,12 @@ public class DeleteGoodsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String goodsID= request.getReader().readLine();
-		////根据获取到的ID删除
+		SqlSession session=DBConnection.OpenSession();
+		////根据获取到的ID删除(数据库操作)
+		String studentID =(String) request.getSession().getAttribute("studentID");
+		//根据studentID和goodsID
+		//session.delete(arg0, arg1);
+		
 		System.out.println(goodsID);
 		
 		

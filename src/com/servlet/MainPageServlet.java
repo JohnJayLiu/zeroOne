@@ -54,6 +54,7 @@ public class MainPageServlet extends HttpServlet {
 		response.getWriter().write(jsonString);
 		//选择社团活动
 		
+		
 	}
 
 }

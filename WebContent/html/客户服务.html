@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../css/客户服务.css">
 	<script language="javascript" src="../js/客户服务.js"></script>
 </head>
-<title>登录</title>
+<title>客户服务</title>
 <body>
 	<div class="top-nav">
 	    <div class="container">
@@ -50,13 +50,20 @@
 		        <li class="off">帮助</li>
 		        </ul>
 		    <div id="firstPage" class="hide">
-		            <a href = "#">客服</a><br/>
+		           客服电话：100086<br/>
 		    </div>
-		    <div id="secondPage" class="show">
-		            <a href = "#">投诉</a><br/>
+		    <div id="secondPage" class="hide">
+					<form>
+						投诉商家<input id="storeName" name="storeName"></br></br>
+						投诉理由<textarea rows="5" id="reason" name="reason"></textarea></br></br>
+						<input name="a" type="radio"  checked="checked">匿名<input name="a" type="radio">实名</br></br>
+						<button><a href="#" onclick="submit()" style="color:black">提交</a></button>
+					</form>
 		    </div>
-		    <div id="thirdPage" class = "hide">
+		    <div id="thirdPage" class = "show">
+								<a href = "修改信息.html">修改我的信息</a><br/>
 		            <a href = "#">找不到产品？</a><br/>
+								<a href = "#">查询物流</a><br/>
 								<a href = "#">忘记密码？</a><br/>
 		    </div>
 		</div>

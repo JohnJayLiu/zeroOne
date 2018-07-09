@@ -10,17 +10,6 @@
     transition: background 200ms;
 }
 
-a{ text-decoration:none; color:black;}
-a:hover{text-decoration:none; color:#336699;}
-#tab{width:740px; padding:5px;height:150px;margin:25px;text-align:center;}
-#tab ul{list-style:none; display:;height:30px;line-height:30px; border-bottom:1px #dd182b solid;}
-#tab ul li{background:#dd182b;cursor:pointer;
-float:left;list-style:none height:29px; line-height:29px;padding:0px 10px; margin:0px 10px;
- border:1px solid #BBB; border-bottom:2px solid #C88;color:white;}
-#tab ul li.on{border-top:2px solid Saddlebrown; border-bottom:2px solid #FFF;}
-#tab div{line-height:24px;border-top:none;  padding:1px; border:1px solid white;padding:10px;}
-.hide{display:none;}
-
 body {
     background: #f5f5f5;
     font-size: 14px;
@@ -160,13 +149,20 @@ img {
     color: #fff;
 }
 
-.login{
-	width:800px;
-	height:600px;
+.reg{
+	width:600px;
+	
 	background-color:#eee;
 	border:2px solid #dd182b;
 	margin:auto;
-	text-align: center;
+	text-align:center;
+}
+
+.reg_inner{
+	width:400px;
+	//height:300px;
+	margin:auto;
+	text-align: left;
 }
 
 .button{
