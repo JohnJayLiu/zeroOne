@@ -6,24 +6,41 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/客户服务.css">
+	<script language="javascript" src="js/判断登录.js"></script>
 	<script language="javascript" src="js/客户服务.js"></script>
 </head>
-<title>登录</title>
+<title>客户服务</title>
 <body>
+	<input type="hidden" id="uid" />
 	<div class="top-nav">
 	    <div class="container">
 	        <div class="fl">
 	            <a href="index.html" class="item">首页</a>
 	        </div>
-	        <div class="fr">
-	            <a href="我的订单.html" class="item">我的订单</a>
-	            <a href="收藏夹.html" class="item">收藏夹</a>
+					<div class="fr">
+						 <a href="发布产品.html" class="item">发布产品</a>
+							<a href="我的订单.html" class="item">我的订单</a>
+							<div class="dropdown">
+							<a href="收藏夹.html" class="item">收藏夹</a>
+							<div class="dropdown-content">
+								<p><a href="收藏夹.html" class="item" style="color:#555">商品收藏</a></p>
+								<p><a href="收藏夹1.html" class="item" style="color:#555">店铺收藏</a></p>
+								</div>
+							</div>
 				<a href="登录.html" class="item">登录</a>
-	            <a href="注册.html" class="item">注册</a>
-	            <a href="客户服务.html" class="item">客户服务</a>
-	        </div>
-	    </div>
+							<a href="注册.html" class="item">注册</a>
+							<div class="dropdown">
+							<a href="客户服务.html" class="item">客户服务</a>
+							<div class="dropdown-content">
+								<p><a href="修改信息.html" class="item" style="color:#555">修改信息</a></p>
+								<p><a href="#" class="item" style="color:#555">查询物流</a></p>
+								<p><a href="#" class="item" style="color:#555">客服</a></p>
+								</div>
+							</div>
+					</div>
+			</div>
 	</div>
 	<div class="header clearf">
 	    <div class="container">
@@ -31,7 +48,7 @@
 	            <!--<img src="image/logo.png"/>-->
 	        </div>
 	        <div class="search-bar col-5">
-	            <input type="text" class="col-8">
+	            <input type="text" id="search" name="search" class="col-8">
 	            <button class="col-2">搜索</button>
 	        </div>
 	        <div class="cart col-3">
@@ -50,13 +67,20 @@
 		        <li class="off">帮助</li>
 		        </ul>
 		    <div id="firstPage" class="hide">
-		            <a href = "#">客服</a><br/>
+		           客服电话：100086<br/>
 		    </div>
-		    <div id="secondPage" class="show">
-		            <a href = "#">投诉</a><br/>
+		    <div id="secondPage" class="hide">
+					<form>
+						投诉商家<input id="storeName" name="storeName"></br></br>
+						投诉理由<textarea rows="5" id="reason" name="reason"></textarea></br></br>
+						<input name="a" type="radio"  checked="checked">匿名<input name="a" type="radio">实名</br></br>
+						<button><a href="#" onclick="submit()" style="color:black">提交</a></button>
+					</form>
 		    </div>
-		    <div id="thirdPage" class = "hide">
+		    <div id="thirdPage" class = "show">
+								<a href = "修改信息.html">修改我的信息</a><br/>
 		            <a href = "#">找不到产品？</a><br/>
+								<a href = "#">查询物流</a><br/>
 								<a href = "#">忘记密码？</a><br/>
 		    </div>
 		</div>

@@ -45,10 +45,12 @@ public class RequestInfoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession hSession=request.getSession();
+		
 		String studentID=(String) hSession.getAttribute("studentID");
-		System.out.println(studentID);
+		
+		System.out.println("requstInfo"+studentID);
 		SqlSession session=DBConnection.OpenSession();
-		List<Student>students=session.selectList("com.dao.DataOperate.getStudentByID", "1234");
+		List<Student>students=session.selectList("com.dao.DataOperate.getStudentByID", studentID);
 		String jsonString =JSON.toJSONString(students.get(0));
 		response.getWriter().println(jsonString);
 		//doGet(request, response);

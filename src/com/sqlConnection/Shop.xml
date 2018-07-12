@@ -15,4 +15,8 @@
     <delete id="deleteShop" parameterType="String">
         delete from shop where shopID=#{shopID}
     </delete>
+    <select id="searchShop" parameterType="String" resultType="shop">
+        select * from shop where shopName like #{keyword}
+    </select>
+    
 </mapper>

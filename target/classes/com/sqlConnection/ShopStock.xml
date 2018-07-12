@@ -18,4 +18,7 @@
     <delete id="deleteShopStock" parameterType="String">
         delete from ShopStock WHERE shopID=#{shopID}
     </delete>
+    <select id="searchGoods" parameterType="String" resultType="ShopStock">
+        select * from ShopStock where goodsName like #{goodsName}
+    </select>
 </mapper>

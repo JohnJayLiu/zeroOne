@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.models.Student;
 import com.sqlConnection.DBConnection;
@@ -43,17 +44,22 @@ public class ChangeInfoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		SqlSession session=DBConnection.OpenSession();	 
+		 
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		BufferedReader reader = request.getReader();
         String json = reader.readLine();
         JSONObject jsonObject=JSONObject.parseObject(json);
+        System.out.println(json);
         Student stu=(Student)JSONObject.toJavaObject(jsonObject, Student.class);
-        if (stu.getPassword()==null) {
-        	stu.setPassword(((Student) session.selectList("com.dao.DataOperate.getStudentByID", stu.getStudentID()).get(0)).getPassword());
+        stu.setStudentID((String) request.getSession().getAttribute("studentID"));
+        if (stu.getPassword().equals("")) {
+        	stu.setPassword(((Student) DBConnection.OpenSession().selectList("com.dao.DataOperate.getStudentByID", stu.getStudentID()).get(0)).getPassword());
         }
         reader.close();
-       // session.update(arg0, stu)
+        SqlSession session=DBConnection.OpenSession();
+       
+        System.out.println(session.update("com.dao.DataOperate.updateStudent", stu));
+        session.commit();
 		doGet(request, response);
 	}
 

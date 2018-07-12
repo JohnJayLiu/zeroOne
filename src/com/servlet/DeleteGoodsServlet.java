@@ -43,7 +43,7 @@ public class DeleteGoodsServlet extends HttpServlet {
 		String goodsID= request.getReader().readLine();
 		SqlSession session=DBConnection.OpenSession();
 		////根据获取到的ID删除(数据库操作)
-		String studentID =(String) request.getSession().getAttribute("studentID");
+		//String studentID =(String) request.getSession().getAttribute("studentID");
 		//根据studentID和goodsID
 		//session.delete(arg0, arg1);
 		
@@ -51,7 +51,7 @@ public class DeleteGoodsServlet extends HttpServlet {
 		
 		
 		
-		doGet(request, response);
+		//doGet(request, response);
 	}
 
 }

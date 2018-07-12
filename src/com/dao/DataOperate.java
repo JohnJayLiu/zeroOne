@@ -1,5 +1,7 @@
 package com.dao;
 
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+
 import com.models.*;
 //�����ﶨ�����ݿ�����Ľӿ�
 public interface DataOperate {
@@ -11,11 +13,13 @@ public interface DataOperate {
     public void insertShopStock (ShopStock shopStock);
     public void updateShopStock(ShopStock shopStock);
     public void  daleteShopStock(String shopID);
+    public ShopStock searchGoods(String keyword);
     
     public Shop getShopID(String shopID);
     public void insertShop (Shop shop);
     public void updateShop (Shop shop);
     public void  deleteShop(String shopID);
+    public Shop searchShop(String keyword);
     
     public ShoppingCar getgoodsID(String goodsID);
     public void insertShoppingCar(ShoppingCar shoppingCar);

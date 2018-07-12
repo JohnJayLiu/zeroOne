@@ -1,3 +1,29 @@
+//button.onclick=
+	function searchItem(){
+	//alert("dasds");
+	var data=document.getElementById("search").value;
+	//alert(data);
+	$.ajax({  
+					url : "doSearch",  
+					type : "POST",  
+					datatype:"text",  
+					//contentType: "application/json; charset=utf-8",  
+					data: data, 
+					success : function(data, stats) {  
+						//alert("请求成功");
+							if (stats == "success") {  
+								alert("search");
+								alert(data);
+								   window.location.href="search.html";//跳转到查询界面
+								   
+								   }  
+					},  
+					error : function(data) {  
+							alert("请求失败");  
+					}  
+			}); 
+}
+
 window.onload = function () {
 	var container = document.getElementById('container');
 	var list = document.getElementById('list');
@@ -83,4 +109,71 @@ window.onload = function () {
 	play();
 
 }
+
+
+
+//var data=3;
+//document.getElementById("uid").value=data;
+$.ajax({
+	url : "JudgeLoginState",
+	dataType : "text",//数据格式 
+	type : "post",//请求方式
+	async :true,//是否异步请求
+	success : function(data) {   //如果请求成功，返回数据。
+//	var html = "";
+	//for(var i=0;i<data.length;i++){    //遍历data数组
+		//			var ls = data[i];     
+		//			html +="<span>测试："+ls+"</span>";
+		//	}
+	//$("#test").html(html); //在html页面id=test的标签里显示html内容
+		//alert("判断登陆");
+	if(data.length!=0){
+		//在html隐藏页面保存uid信息
+		alert("data:"+data);
+		alert("判断登陆lll"+data);
+		document.getElementById("uid").value=data;
+		//alert(uid);
+		document.getElementById("note").innerText="欢迎登录";
+		var span=document.createElement("span");
+		span.className="avatar";
+		document.getElementById("note").appendChild(span);
+		thisNode=document.getElementById("link2");
+		document.getElementById("link1").innerText="修改信息";
+		document.getElementById("link1").href="修改信息.html";
+		document.getElementById("link2").innerText="退出登录";
+		document.getElementById("link2").href="#";
+		document.getElementById("link2").onclick=function ret(){
+			//向后台发送退出信息
+			$.ajax({  
+							url : "doLogout",  
+							type : "POST",  
+							datatype:"text",  
+							//contentType: "application/json; charset=utf-8",  
+							data: "logout", 
+							success : function(data, stats) {  
+									if (stats == "success") {  
+										//   window.location.href="/yc"  
+									}  
+							},  
+							error : function(data) {  
+									alert("请求失败");  
+							}  
+					});  
+			//重新刷新页面
+			location.reload();
+			
+			alert("已退出")
+			};
+		//alert(document.getElementById("uid").value);
+	}
+},
+});
+
+//var uid=document.getElementById("uid").value;
+//alert(uid);
+
+//若uid存在，修改界面
+//if(uid.length!=0){
+	
+//}
 

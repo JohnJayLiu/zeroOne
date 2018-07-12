@@ -1,7 +1,5 @@
 package com.models;
 
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
-
 public class Student {
 	private String studentName;
 	private String studentID;

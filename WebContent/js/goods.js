@@ -1,5 +1,5 @@
 function addItem(){
-	alert("已添加到购物车");
+	
 	var id = getID();
 	var num=document.getElementById("num").value;
 	var data = id + "," + num ;
@@ -9,14 +9,16 @@ function addItem(){
 	
 	//返回goodsID并在数据库购物车中添加此商品
 	$.ajax({  
-					url : "a.action",  
+					url : "cart",  
 					type : "POST",  
 					datatype:"text",  
-					contentType: "application/json; charset=utf-8",  
+			//		contentType: "application/json; charset=utf-8",  
 					data: data, 
 					success : function(data, stats) {  
+						alert("已添加到购物车");
 							if (stats == "success") {  
 								//   window.location.href="/yc"  
+								
 							}  
 					},  
 					error : function(data) {  
@@ -25,7 +27,7 @@ function addItem(){
 			});  
 }
 
-
+//商品id
  window.onload = getID;
 	  var id = getID();
       function getID() {
@@ -51,6 +53,16 @@ function addItem(){
 							alert("请求失败");  
 					}  
 			});  
+			
+		
+// 	var uid=document.getElementById("uid").value;
+// 	//alert(uid);
+// 	
+// 	//若uid存在，修改界面
+// 	if(uid.length!=0){
+// 		
+// 	}
+			
 	 //向后台请求goodsID相关信息
 	 var goodsInfo;
 	 	//接受商品信息
@@ -58,7 +70,7 @@ function addItem(){
 	  							url : "order.php",
 	  							dataType : "json",//数据格式 
 	  							type : "post",//请求方式
-	  							async : false,//是否异步请求
+	  							async : true,//是否异步请求
 	  							success : function(data) {   //如果请求成功，返回数据。
 	  							var html = "";
 	  							for(var i=0;i<data.length;i++){    //遍历data数组

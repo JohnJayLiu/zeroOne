@@ -45,11 +45,12 @@ public class GoodsPageServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		SqlSession session=DBConnection.OpenSession();
-		
+		//SqlSession session=DBConnection.OpenSession();
 		HttpSession hSession=request.getSession();
-		List <ShopStock>goodsList=session.selectList("com.dao.DataOperate.getShopStock", "0427");
 		String  studentID=(String) hSession.getAttribute("studentID");
+		
+		//List <ShopStock>goodsList=session.selectList("com.dao.DataOperate.getShopStock", studentID);
+		
 		
 		//查询用户订单
 		Orders order=new Orders();//session.selectlist(,).....

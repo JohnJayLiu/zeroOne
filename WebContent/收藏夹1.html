@@ -6,9 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/collection.css">
+	<link rel="stylesheet" href="css/favorite.css">
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+	
 </head>
 <body>
+	<input type="hidden" id="uid" />
+<!--
 <div class="top-nav">
     <div class="container">
         <div class="fl">
@@ -31,126 +35,179 @@
 <div class="total_item_container">
     <div class="total_item">全部店铺</div>
 </div>
-<ul>
-    <li class="coll_item_list_li">
-        <div class="coll_store fl">
-		    <div class="coll_store_link">
-		        <div class="coll_store_pictrue fl">
+<ul id="id2">
+    <li class="fa_item_list_li">
+        <div class="fa_store fl">
+		    <div class="fa_store_link">
+		        <div class="fa_store_picture fl">
 			        <a href="#"><img class="img" src="" alt="暂无图片"/></a>
 			    </div>
-		        <div class="coll_store_name fl">
+		        <div class="fa_store_name fl">
 		            <a href="#">名字有两行（暂定）店</a>
 		        </div>
+				<div class="store_delete_icon fl" onclick="deleteElement(this)">
+				    <img class="img" src="img/delete.png" title="删除"/>
+				</div>
 			</div>
-		    <div class="coll_store_info">
+		    <div class="fa_store_info">
 			    店铺简介：卖家很懒，什么都没说
 			</div>
 		</div>
-        <div class="coll_itemlist fl">
+        <div class="fa_itemlist fl">
             <div class="thing_on_shelf">架上物品</div>
-			<div class="coll_items">
+			<div class="cmore">查看更多》</div>
+			<div class="fa_storeitems">
                 <ul>
-                    <li class="coll_items_li fl">
-					    <div class="coll_pictrue">
-					    <a href="#"><img class="img" src="" alt="暂无图片"/></a>
+                    <li class="fa_storeitems_li fl">
+					    <div class="fa_picture">
+					        <a href="#"><img class="img" src="img/item1.jpg" alt="暂无图片" title="日韩护眼纸16K加厚胶套本B5超厚大笔记本子16开软抄本学生练习本"/></a>
 						</div>
-						<div class="coll_price">￥00.00</div>
+						<div class="fa_price">￥00.00</div>
 					</li>
-                    <li class="coll_items_li fl">
-					    <div class="coll_pictrue">
-					    <a href="#"><img class="img" src="" alt="暂无图片"/></a>
+                    <li class="fa_storeitems_li fl">
+					    <div class="fa_picture">
+					        <a href="#"><img class="img" src="img/item1.jpg" alt="暂无图片" title="日韩护眼纸16K加厚胶套本B5超厚大笔记本子16开软抄本学生练习本"/></a>
 						</div>
-						<div class="coll_price">￥00.00</div>
+						<div class="fa_price">￥00.00</div>
 					</li>
-                    <li class="coll_items_li fl">
-					    <div class="coll_pictrue">
-					    <a href="#"><img class="img" src="" alt="暂无图片"/></a>
+                    <li class="fa_storeitems_li fl">
+					    <div class="fa_picture">
+					        <a href="#"><img class="img" src="img/item1.jpg" alt="暂无图片" title="日韩护眼纸16K加厚胶套本B5超厚大笔记本子16开软抄本学生练习本"/></a>
 						</div>
-						<div class="coll_price">￥00.00</div>
+						<div class="fa_price">￥00.00</div>
 					</li>
 				</ul>
             </div>
 		</div>
     </li>
-	<li class="coll_item_list_li">
-        <div class="coll_store fl">
-		    <div class="coll_store_link">
-		        <div class="coll_store_pictrue fl">
+	<li class="fa_item_list_li">
+        <div class="fa_store fl">
+		    <div class="fa_store_link">
+		        <div class="fa_store_picture fl">
 			        <a href="#"><img class="img" src="" alt="暂无图片"/></a>
 			    </div>
-		        <div class="coll_store_name fl">
+		        <div class="fa_store_name fl">
 		            <a href="#">零一</a>
 		        </div>
+				<div class="store_delete_icon fl" onclick="deleteElement(this)">
+				    <img class="img" src="img/delete.png" title="删除"/>
+				</div>
 			</div>
-		    <div class="coll_store_info">
+		    <div class="fa_store_info">
 			    店铺简介：卖家很懒，什么都没说。卖家很懒，什么都没说。
 			</div>
 		</div>
-        <div class="coll_itemlist fl">
+        <div class="fa_itemlist fl">
             <div class="thing_on_shelf">架上物品</div>
-			<div class="coll_items">
+			<div class="fa_storeitems">
                 <ul>
-                    <li class="coll_items_li fl">
-					    <div class="coll_pictrue">
-					    <a href="#"><img class="img" src="" alt="暂无图片"/></a>
+                    <li class="fa_storeitems_li fl">
+					    <div class="fa_picture">
+					        <a href="#"><img class="img" src="img/item1.jpg" alt="暂无图片" title="日韩护眼纸16K加厚胶套本B5超厚大笔记本子16开软抄本学生练习本"/></a>
 						</div>
-						<div class="coll_price">￥00.00</div>
+						<div class="fa_price">￥00.00</div>
 					</li>
-                    <li class="coll_items_li fl">
-					    <div class="coll_pictrue">
-					    <a href="#"><img class="img" src="" alt="暂无图片"/></a>
+                    <li class="fa_storeitems_li fl">
+					    <div class="fa_picture">
+					        <a href="#"><img class="img" src="img/item1.jpg" alt="暂无图片" title="日韩护眼纸16K加厚胶套本B5超厚大笔记本子16开软抄本学生练习本"/></a>
 						</div>
-						<div class="coll_price">￥00.00</div>
+						<div class="fa_price">￥00.00</div>
 					</li>
-                    <li class="coll_items_li fl">
-					    <div class="coll_pictrue">
-					    <a href="#"><img class="img" src="" alt="暂无图片"/></a>
+                    <li class="fa_storeitems_li fl">
+					    <div class="fa_picture">
+					        <a href="#"><img class="img" src="img/item1.jpg" alt="暂无图片" title="日韩护眼纸16K加厚胶套本B5超厚大笔记本子16开软抄本学生练习本"/></a>
 						</div>
-						<div class="coll_price">￥00.00</div>
+						<div class="fa_price">￥00.00</div>
 					</li>
 				</ul>
             </div>
 		</div>
     </li>
-	<li class="coll_item_list_li">
-        <div class="coll_store fl">
-		    <div class="coll_store_link">
-		        <div class="coll_store_pictrue fl">
+	<li class="fa_item_list_li">
+        <div class="fa_store fl">
+		    <div class="fa_store_link">
+		        <div class="fa_store_picture fl">
 			        <a href="#"><img class="img" src="" alt="暂无图片"/></a>
 			    </div>
-		        <div class="coll_store_name fl">
+		        <div class="fa_store_name fl">
 		            <a href="#">名字有两行（暂定）店</a>
 		        </div>
+				<div class="store_delete_icon fl" onclick="deleteElement(this)">
+				    <img class="img" src="img/delete.png" title="删除"/>
+				</div>
 			</div>
-		    <div class="coll_store_info">
+		    <div class="fa_store_info">
 			    店铺简介：卖家很懒，什么都没说
 			</div>
 		</div>
-        <div class="coll_itemlist fl">
+        <div class="fa_itemlist fl">
             <div class="thing_on_shelf">架上物品</div>
-			<div class="coll_items">
+			<div class="fa_storeitems">
                 <ul>
-                    <li class="coll_items_li fl">
-					    <div class="coll_pictrue">
-					    <a href="#"><img class="img" src="" alt="暂无图片"/></a>
+                    <li class="fa_storeitems_li fl">
+					    <div class="fa_picture">
+					        <a href="#"><img class="img" src="img/item1.jpg" alt="暂无图片" title="日韩护眼纸16K加厚胶套本B5超厚大笔记本子16开软抄本学生练习本"/></a>
 						</div>
-						<div class="coll_price">￥00.00</div>
+						<div class="fa_price">￥00.00</div>
 					</li>
-                    <li class="coll_items_li fl">
-					    <div class="coll_pictrue">
-					    <a href="#"><img class="img" src="" alt="暂无图片"/></a>
+                    <li class="fa_storeitems_li fl">
+					    <div class="fa_picture">
+					        <a href="#"><img class="img" src="img/item1.jpg" alt="暂无图片" title="日韩护眼纸16K加厚胶套本B5超厚大笔记本子16开软抄本学生练习本"/></a>
 						</div>
-						<div class="coll_price">￥00.00</div>
+						<div class="fa_price">￥00.00</div>
 					</li>
-                    <li class="coll_items_li fl">
-					    <div class="coll_pictrue">
-					    <a href="#"><img class="img" src="" alt="暂无图片"/></a>
+                    <li class="fa_storeitems_li fl">
+					    <div class="fa_picture">
+					        <a href="#"><img class="img" src="img/item1.jpg" alt="暂无图片" title="日韩护眼纸16K加厚胶套本B5超厚大笔记本子16开软抄本学生练习本"/></a>
 						</div>
-						<div class="coll_price">￥00.00</div>
+						<div class="fa_price">￥00.00</div>
 					</li>
 				</ul>
             </div>
 		</div>
     </li>
 </ul>
+-->
+<div class="top-nav">
+    <div class="container">
+        <div class="fl">
+            <a href="index.html" class="item">首页</a>
+        </div>
+                <div class="fr">
+        					 <a href="发布产品.html" class="item">发布产品</a>
+                    <a href="我的订单.html" class="item">我的订单</a>
+        						<div class="dropdown">
+                    <a href="收藏夹.html" class="item">收藏夹</a>
+        						<div class="dropdown-content">
+        							<p><a href="收藏夹.html" class="item" style="color:#555">商品收藏</a></p>
+        							<p><a href="收藏夹1.html" class="item" style="color:#555">店铺收藏</a></p>
+        							</div>
+        						</div>
+        			<a href="登录.html" class="item">登录</a>
+                    <a href="注册.html" class="item">注册</a>
+        						<div class="dropdown">
+                    <a href="客户服务.html" class="item">客户服务</a>
+        						<div class="dropdown-content">
+        							<p><a href="修改信息.html" class="item" style="color:#555">修改信息</a></p>
+        							<p><a href="#" class="item" style="color:#555">查询物流</a></p>
+                      <p><a href="#" class="item" style="color:#555">客服</a></p>
+        							</div>
+        						</div>
+                </div>
+            </div>
+        </div>
+
+<div id="id1">
+	<a href="收藏夹.html" class="m_out" onmouseover="this.className='m_out m_over'" onmouseout="this.className='m_out'">商品收藏</a>
+	<a href="收藏夹1.html" class="m_out m_over">店铺收藏</a>
+</div>
+<div class="total_item_container">
+    <div class="total_item">全部店铺</div>
+</div>
+<div class="item_list_img">
+<ul id="id2">
+</ul>
+</div>
 </body>
+<script type="text/javascript" src="js/favorite1.js" charset="UTF-8"></script>
+</html>

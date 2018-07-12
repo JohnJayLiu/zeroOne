@@ -13,15 +13,17 @@
         select * from student where studentID = #{studentID}
     </select>
     <insert id="insertStudent" parameterType="Student">
-        insert into student (studentID,studentName,phone,address,password)
-        values (#{studentID},#{studentName},#{phone},#{address},#{password})
+        insert into student (studentID,studentName,phone,address,password，email)
+        values (#{studentID},#{studentName},#{phone},#{address},#{password},#{email})
     </insert>
     <update id="updateStudent" parameterType="Student">
         update student set 
         studentName=#{studentName},
         phone=#{phone},
         address=#{address},
-        password=#{password}
+        password=#{password},
+        email=#{email} 
+        where studentID = #{studentID}
     </update>
 
 </mapper>

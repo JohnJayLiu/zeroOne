@@ -25,9 +25,6 @@
     <url-pattern>/deleteGoods</url-pattern>
   </servlet-mapping>
   <display-name>zeroOne</display-name>
-  <welcome-file-list>
-    <welcome-file>chat.jsp</welcome-file>
-  </welcome-file-list>
   <servlet>
     <servlet-name>testServlet</servlet-name>
     <servlet-class>com.servlet.TestServlet</servlet-class>
@@ -40,4 +37,40 @@
     <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/doRegister</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>com.servlet.OrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/order</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>cartServlet</servlet-name>
+    <servlet-class>com.servlet.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cartServlet</servlet-name>
+    <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>favoriteShop</servlet-name>
+    <servlet-class>com.servlet.FavoriteShopServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>favoriteShop</servlet-name>
+    <url-pattern>/loadFavorite</url-pattern>
+  </servlet-mapping>
+  <servlet>
+      <servlet-name>favoriteGoods</servlet-name>
+      <servlet-class>com.servlet.FavoriteGoodsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>favoriteGoods</servlet-name>
+      <url-pattern>/loadFavoriteGoods</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
 </web-app>

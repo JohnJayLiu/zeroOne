@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!--// 在这里实现shopstock数据的操作的SQL语句，并且映射到相应的dataoperate中的接口 -->
+<mapper namespace="com.dao.DataOperate">
+    <select id="getgoodsID" parameterType="String" resultType="com.models.ShoppingCar">
+      select * from ShoppingCar where goodsID=#{goodsID}
+    </select>
+    <insert id="insertShoppingCar" parameterType="ShoppingCar" keyProperty="goodsID">
+        insert into ShoppingCar (goodsID,studentID,count)
+        values (#{goodsID},#{studentID},#{count})
+    </insert>
+    <update id="updateShoppingCar" parameterType="ShoppingCar" >
+        update ShoppingCar set studentID=#{studentID},count=#{count} where goodsID=#{goodID}
+    </update>
+    <delete id="deleteShoppingCar " parameterType="String">
+         delete from ShoppingCar where goodsID=#{goodsID}
+    </delete>
+</mapper>
